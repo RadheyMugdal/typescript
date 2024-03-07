@@ -42,3 +42,31 @@ function getFood(pet : Fish | Bird){
     }
     return "birdfood"
 }
+
+
+//descrimination union
+interface Circle{
+    kind:"circle"
+}
+interface Square{
+    kind:"square"
+    size:number
+}
+
+
+type shape=Circle | Square
+function getTrueShape(shape:shape){
+    if(shape.kind=="circle"){
+       return Math.PI*Math.pow(shape.size,2)
+    }
+    return  4*shape.size
+}
+
+
+function getArea(shape:shape){
+    switch (shape.kind){
+        case  "circle":return getTrueShape(shape);
+        case "square":return getTrueShape
+      
+    }
+}
